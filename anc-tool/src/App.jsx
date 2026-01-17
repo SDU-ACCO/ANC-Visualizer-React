@@ -54,7 +54,7 @@ const FileUploader = ({ label, file, onFileLoaded, colorClass, onDelete }) => {
     reader.onload = (event) => {
       const text = event.target.result;
       const data = parseREWFile(text);
-      onFileLoaded(data, file.name);
+      onFileLoaded({ data, name: file.name });
     };
     reader.readAsText(file);
   };
